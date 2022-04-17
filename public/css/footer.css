@@ -1,0 +1,26 @@
+/* .footer-container::before {
+  position: absolute;
+  content: "";
+  
+  content: "";
+  height: 0px;
+  width: 0px;
+  border-top-width: 80px;
+  border-right-width: 0px;
+  border-bottom-width: 0px;
+  border-left-width: 100vw;
+  border-left-color: #343a40;
+  top: -79px;
+} */
+
+/* 
+
+.footer-container {
+  position: relative;
+  background-color: #343a40;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */
+

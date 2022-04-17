@@ -1,0 +1,5 @@
+_id,campaign_id,user_id,title,content,numberOfViews,numberOfLikes,numberOfDislikes,numberOfComments,createdAt
+625be428f2602a516ece7318,625be371f2602a516ece72d0,625bd98bf2602a516ece71bf, Đau con mẹ mày,"<p>OKe</p>
+",1,0,0,0,Sun Apr 17 2022 16:55:52 GMT+0700 (Indochina Time)
+625be454f2602a516ece732f,625be371f2602a516ece72d0,625bd85bf2602a516ece717a, oke,"<p>xin lỗi được chưa</p>
+",1,1,0,1,Sun Apr 17 2022 16:56:36 GMT+0700 (Indochina Time)

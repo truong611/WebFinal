@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <base href="/" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+      integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"
+    />
+    <link
+      href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/46f8fc0735.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+
+    <link rel="stylesheet" href="../css/footer.css" />
+    <link rel="stylesheet" href="../css/header.css" />
+    <link rel="stylesheet" href="../css/popup.css" />
+
+    <title>CMS</title>
+  </head>
+  <style>
+    .navbar-custom {
+      background-color: #32776b;
+    }
+
+    .navbar-brand {
+      color: white !important;
+    }
+
+    .navbar-brand .header {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      width: 1400px;
+    }
+
+    .navbar-brand .header p {
+      margin-left: 10px;
+      margin-right: 10px;
+      font-size: 45px;
+      font-family: "Times New Roman", Times, serif;
+      color: black;
+      font-weight: 500;
+    }
+
+    .navbar-brand .buttonLogout {
+      margin-left: 90%;
+      font-size: 30px;
+      font-family: "Times New Roman", Times, serif;
+      color: black;
+      font-weight: 500;
+      border: 1px solid #32776b;
+      width: 1000px;
+      height: 50px;
+    }
+
+    .navbar {
+      background-color: white;
+      height: 150px;
+      width: 100%;
+      border-bottom: 5px solid rgb(133, 133, 133);
+    }
+
+    .navbar-brand img {
+      margin-left: 100px;
+    }
+
+    .area {
+      font-size: 40px;
+      font-family: "Times New Roman", Times, serif;
+      color: black;
+      font-weight: 500;
+    }
+  </style>
+
+  <body>
+    <nav class="navbar navbar-custom">
+      <% if(user){ %>
+      <div class="navbar-brand">
+        <a href="/" class="header">
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpw7pVnHbXoXv5xg_xYA4gWtjorCOt59y_CSDlXf2dE47Ib9eU3KfN0bHowo8KZeY-xaI&usqp=CAU"
+            width="250"
+            height="90"
+            class="d-inline-block align-top"
+            alt=""
+          />
+          <p>Greenwich University</p>
+        </a>
+        <a class="buttonLogout" href="/login/logout">Log out</a>
+      </div>
+
+      <!-- <a class="navbar-brand " href="/">Home</a>
+      <button class="navbar-toggler d-md-none collapsed float-right" type="button" data-toggle="collapse"
+        data-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <ul class="navbar-nav px-3">
+        <li class="nav-item text-nowrap">
+          <a class="nav-link navbar-brand" href="/login/logout">Log out</a>
+        </li>
+      </ul> -->
+      <% } %>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+        <nav
+          id="sidebarMenu"
+          class="col-md-3 col-lg-2 d-md-block sidebar collapse"
+        >
+          <div class="category-side-bar sidebar-sticky pt-3">
+            <% if(user.role=="admin" ){%>
+            <h6
+              class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1"
+            >
+              <span class="area">Admin </span>
+            </h6>
+            <ul class="nav flex-column">
+              <li class="nav-item">
+                <a class="area2 nav-link" href="/admin/accounts">
+                  <i class="far fa-user"></i>
+                  All Account</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="area2 nav-link" href="admin/create_department">
+                  <i class="far fa-building"></i>
+                  Department
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="area2 nav-link" href="/admin/campaigns">
+                  <i class="bi bi-clipboard-plus"></i>
+                  Event
+                </a>
+              </li>
+            </ul>
+            <% } %> <% if(user.role=="qam" ){%>
+            <h6
+              class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1"
+            >
+              <span class="area">QAM </span>
+            </h6>
+            <ul class="nav flex-column">
+              <li class="nav-item">
+                <a class="area2 nav-link" href="/qam">
+                  <i class="bi bi-tags"></i>
+                  Categories</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="area2 nav-link" href="qam/dashboard">
+                  <i class="bi bi-graph-up"></i>
+                  Dashboard
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="area2 nav-link" href="/qam/download">
+                  <i class="bi bi-download"></i>
+                  Download
+                </a>
+              </li>
+            </ul>
+            <% } %> <% if(categories){ %>
+
+            <ul class="nav flex-column mb-2">
+              <li class="nav-item">
+                <a class="area2 nav-link" href="/campaigns">
+                  <i class="bi bi-clipboard-data"></i>
+                  All topics
+                </a>
+              </li>
+              <% if(categories !='' ){ %> <%
+              categories.forEach(function(category, index){ %> <% }) %> <% } %>
+            </ul>
+            <% } %>
+            <ul>
+              <a class="area2 nav-link" href="/list_ideas/1">
+                <i class="bi bi-list-task"></i>
+                List of Ideas
+              </a>
+            </ul>
+          </div>
+        </nav>
+
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+          <%- messages('messages', locals) %>

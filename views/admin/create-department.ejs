@@ -1,0 +1,129 @@
+<%- include('../_layout/header') %>
+<style>
+  .save {
+    background-color: #32776b;
+  }
+  .form-group {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 700px;
+  }
+  .form-group input {
+    width: 400px;
+    height: 50px;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding-left: 10px;
+    margin-bottom: 10px;
+  }
+  .form-group button {
+    display: flex;
+    width: 180px;
+    height: 50px;
+    border: 1px solid #3bb3de;
+    border-radius: 5px;
+    background-color: #3bb3de;
+    margin-bottom: 10px;
+    justify-content: center;
+    align-items: center;
+  }
+  .form-group p {
+    font-size: 20px;
+    color: white;
+    font-weight: bold;
+    margin-top: 10%;
+  }
+
+  .body {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    width: 90%;
+    height: 80vh;
+    background-color: white;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 20px;
+    border-radius: 10px;
+    padding: 20px;
+    border: 2px solid black;
+  }
+  h2 {
+    margin-left: 10%;
+    margin-right: 5%;
+    font-size: 50px;
+    color: black;
+    font-weight: 700;
+    font-family: "Times New Roman", Times, serif;
+    margin-bottom: 20px;
+    margin-top: 20px;
+  }
+  .table {
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    height: 500px;
+    overflow-y: scroll;
+    width: 90%;
+  }
+  .table td a{
+    color:red;
+    justify-content: start;
+    display: flex;
+
+  }
+  /* .table{
+    display: flex;
+    justify-content: start;
+    border: 1px solid black;
+    flex-direction: column;
+  } */
+</style>
+<h2 class="page-title">Department</h2>
+<div class="body">
+  <form action="/admin/create_department" method="post">
+    <div class="form-group">
+      <input
+        type="text"
+        name="name"
+        class="form-control"
+        placeholder="Add Department "
+        required="true"
+      />
+      <button class="btn btn-primary save"><p>Save</p></button>
+    </div>
+  </form>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Department</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% if(departments != ''){%> <% departments.forEach(function(department,
+      index){ %>
+      <tr>
+        <td><%- index %></td>
+        <td><%- department.department_name %></td>
+        <td>
+          <a
+            href="/admin/department/<%- department._id %>"
+            class="delete"
+            onclick=""
+          >
+            <i class="fas fa-trash-alt"></i>
+          </a>
+        </td>
+        
+      </tr>
+      <% }) %> <% } %>
+    </tbody>
+  </table>
+</div>
+
+<%- include('../_layout/footer') %>

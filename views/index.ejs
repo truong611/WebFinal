@@ -1,0 +1,54 @@
+<%- include('_layout/header') %>
+<style>
+  p {
+    margin-left: 5%;
+    margin-right: 5%;
+    font-size: 50px;
+    color: black;
+    font-weight: 700;
+    font-family: "Times New Roman", Times, serif;
+  }
+  .animation {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    animation-name: example;
+    animation-duration: 6s;
+    animation-delay: 2s;
+  }
+
+  @keyframes example {
+    0% {
+      left: 0px;
+      top: 0px;
+    }
+    25% {
+      left: 200px;
+      top: 0px;
+    }
+    50% {
+      left: 200px;
+      top: 200px;
+    }
+    75% {
+      left: 0px;
+      top: 200px;
+    }
+    100% {
+      left: 0px;
+      top: 0px;
+    }
+  }
+</style>
+
+<p>Welcome to CMS of Greenwich</p>
+<div class="animation">
+  <img
+    src="https://www.gre.ac.uk/__data/assets/image/0025/119653/gre.jpg"
+    alt="Paris"
+    width="900"
+    height="500"
+  />
+</div>
+
+<%- include('_layout/footer') %>

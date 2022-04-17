@@ -1,0 +1,145 @@
+<%- include('../_layout/header') %>
+
+    <style>
+        .container {
+            display: flex;
+            margin-bottom: 3%;
+            width: 100%;
+            margin-left: 5%;
+            margin-right: 5%;
+            height: 100px;
+            flex-direction: column;
+        }
+
+        .container form {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-direction: row;
+            height: 70px;
+            width: 750px;
+
+        }
+
+        .container form input {
+            width: 500px;
+            height: 50px;
+            border: 1px solid black;
+            border-radius: 5px;
+            padding-left: 10px;
+            margin-bottom: 10px;
+        }
+
+        .container form button {
+            display: flex;
+            width: 180px;
+            height: 50px;
+            border-radius: 5px;
+            background-color: #3bb3de;
+            margin-bottom: 10px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container form p {
+            font-size: 20px;
+            color: white;
+            margin-top: 10%;
+        }
+
+        .container form button:hover {
+            background-color: #32776b;
+        }
+
+        .container h1 {
+            font-size: 50px;
+            color: black;
+            font-weight: 700;
+            font-family: "Times New Roman", Times, serif;
+        }
+
+        .pt-5 {
+            display: flex;
+            justify-content: center;
+            border: 2px solid black;
+            margin-top: 2%;
+            background-color: white;
+            border-radius: 10px;
+            width: 90%;
+            margin-left: 5%;
+            margin-right: 5%;
+            height: 80vh;
+            overflow: auto;
+           
+        }
+        .table-area{
+            display: flex;
+            justify-content: center;
+            background-color: white;
+            border-radius: 10px;
+            width: 100%;
+            margin-left: 5%;
+            margin-right: 5%;
+            height: 100%;
+        }
+        .pt-5 .mainHeaderContainer{
+            height: 100px;
+        }
+    </style>
+    <div class="container">
+        <div class="content-submit col-10">
+            <h1>Create new category</h1>
+
+            <form action="/qam/create_category" method="post">
+                <input placeholder="Category Name" type="text" class="form-control" id="name" name="name"
+                    minlength="5" />
+                <button class="btn btn-primary">
+                    <p>Save</p>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <div class="pt-5">
+
+        <div class="table-area">
+            <table class="table table-striped table-hover">
+                <tbody class="thead-dark text-center">
+                    <div class="mainHeaderContainer">
+                    <tr >
+                        <th>ID</th>
+                        <th>Category</th>
+                        <th>Number of topics</th>
+                        <th>Action</th>
+                    </tr>
+                </div>
+                    <% if(categories !='' ){%>
+                        <% categories.forEach(function(category, index){ %>
+
+                            <tr class="text-center">
+                                <td>
+                                    <%- index %>
+                                </td>
+                                <form action="/qam/edit_category/<%= category._id %> " method="post">
+                                    <td><input type="text" name="name" id="" value="<%- category.category %>"
+                                            maxlength="15" minlength="5"></td>
+                                    <td>
+                                        <%- category.campaign.length %>
+                                    </td>
+                                    <td>
+                                        
+                                </form>
+                                <a href="/qam/delete_category/<%- category._id %>" class="btn btn-danger" onclick=""><i
+                                        class="bi bi-trash"></i></a>
+                                </td>
+                            </tr>
+                            <% }) %>
+                                <% } %>
+
+                                
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <%- include('../_layout/footer') %>
