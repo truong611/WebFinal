@@ -1,165 +1,166 @@
 <%- include('../_layout/header') %>
 <style>
-    .inforBody {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 90%;
-      margin-left: 5%;
-      margin-right: 5%;
-      height: 700px;
-      background-color: white;
+  .inforBody {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+    height: 700px;
+    background-color: white;
+  }
 
-    }
+  .inforBody table {
+    width: 100%;
+    height: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+    border-collapse: collapse;
+    padding: auto;
+  }
 
-    .inforBody table {
-      width: 100%;
-      height: 90%;
-      margin-left: 5%;
-      margin-right: 5%;
-      border-collapse: collapse;
-      padding: auto;
-    }
+  .inforBody thead {
+    background-color: #f2f2f2;
+    overflow: auto;
+    height: 30px;
+  }
 
-    .inforBody thead {
-      background-color: #f2f2f2;
-      overflow: auto;
-      height: 30px;
-    }
+  .inforBody i {
+    margin-left: 5%;
+    font-size: large;
+    color: black;
+  }
 
-    .inforBody i {
-      margin-left: 5%;
-      font-size: large;
-      color: black;
-    }
+  .inforBody thead th {
+    height: 30px;
+    padding: auto;
+    background-color: rgba(214, 214, 214, 0.945);
+  }
+  .body {
+    margin-left: 5%;
+    margin-right: 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    height: 100px;
+  }
+  .body a {
+    margin-left: 5%;
+    margin-right: 5%;
+    width: 200px;
+    height: 50px;
+    background-color: #3bb3de;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: large;
+    text-decoration: none;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+  }
+  .body a:hover {
+    background-color: #3bb3de;
+    color: white;
+  }
+  .body a:active {
+    background-color: #3bb3de;
+    color: white;
+  }
+  .body a:focus {
+    background-color: #3bb3de;
+    color: white;
+  }
+  .body a:visited {
+    background-color: #3bb3de;
+    color: white;
+  }
+  .body p {
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 5%;
+    font-size: large;
+    color: white;
+  }
+  .body h2 {
+    margin-left: 5%;
+    margin-right: 5%;
+    font-size: 50px;
+    color: black;
+    font-weight: 700;
+    font-family: "Times New Roman", Times, serif;
+  }
+  .contentContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+    height: 700px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+    border: 2px solid black;
+  }
+</style>
 
-    .inforBody thead th {
-      height: 30px;
-      padding: auto;
-      background-color: rgba(214, 214, 214, 0.945);
-    }
-    .body{
-      margin-left: 5%;
-      margin-right: 5%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-direction: row;
-      height: 100px;
-    }
-    .body a{
-      margin-left: 5%;
-      margin-right: 5%;
-      width: 200px;
-      height: 50px;
-      background-color: #3bb3de;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      font-size: large;
-      text-decoration: none;
-      cursor: pointer;
-      justify-content: center;
-      align-items: center;
-      display: flex;
-      flex-direction: row;
-    }
-    .body a:hover{
-      background-color: #3bb3de;
-      color: white;
-    }
-    .body a:active{
-      background-color: #3bb3de;
-      color: white;
-    }
-    .body a:focus{
-      background-color: #3bb3de;
-      color: white;
-    }
-    .body a:visited{
-      background-color: #3bb3de;
-      color: white;
-    }
-    .body p{
-      margin-left: 5%;
-      margin-right: 5%;
-      margin-top: 5%;
-      font-size: large;
-      color: white;
-    }
-    .body h2{
-      margin-left: 5%;
-      margin-right: 5%;
-      font-size: 50px;
-      color: black;
-      font-weight: 700;
-      font-family: 'Times New Roman', Times, serif;
-    }
-    .contentContainer {
-        display: flex;
-        flex-direction: column;
-        justify-content: start;
-        align-items: center;
-        width: 90%;
-        margin-left: 5%;
-        margin-right: 5%;
-        height: 700px;
-        background-color: white;
-        border-radius: 10px;
-        box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
-        border: 2px solid black;
-    }
-  </style>
+<div class="body">
+  <h2 class="page-title">Event</h2>
+  <a class="edit" href="/admin/create_campaign">
+    <i class="bi bi-plus-square newAccount"></i>
+    <p>Create idea</p>
+  </a>
+</div>
 
-    <div class="body">
-        <h2 class="page-title">Event </h2>
-        <a class="edit" href="/admin/create_campaign">
-            <i class="bi bi-plus-square newAccount"></i>
-            <p>New idea</p>
-        </a>
+<div class="contentContainer">
+  <% if(campaigns !='' ){%> <% campaigns.forEach(function(campaign, index){ %>
+  <li class="viewContainer">
+    <div class="viewLeft">
+      <h5>
+        <a href="/campaign_detail/<%= campaign._id %>"> <%-campaign.title%> </a>
+      </h5>
+      <p>
+        <%- campaign.first_closure.getMonth() + 1 %>/<%-
+        campaign.first_closure.getDate()%>/ <%-
+        campaign.first_closure.getFullYear() %> <%-
+        campaign.first_closure.getHours()%>:<%-
+        campaign.first_closure.getMinutes() %> to <%-
+        campaign.final_closure.getMonth() + 1 %>/<%-
+        campaign.final_closure.getDate()%>/ <%-
+        campaign.final_closure.getFullYear() %> <%-
+        campaign.final_closure.getHours()%>:<%-
+        campaign.final_closure.getMinutes() %>
+      </p>
     </div>
+    <div class="viewRight">
+      <% if(campaign.first_closure> current){%>
+      <td style="color: green">Open</td>
+      <% }else if(campaign.first_closure <=current && campaign.final_closure>
+      current){%>
+      <td style="color: orange">First Closure Closed</td>
+      <%}else{%>
+      <td style="color: red">Closed</td>
+      <% } %>
 
-    <div class="contentContainer">
-        <% if(campaigns !='' ){%>
-            <% campaigns.forEach(function(campaign, index){ %>
-                <li class="viewContainer">
-                    <div class="viewLeft">
-                        <h5>
-                            <a href="/campaign_detail/<%= campaign._id %>">
-                                <%-campaign.title%>
-                            </a>
-                        </h5>
-                        <p>
-                            <%- campaign.first_closure.getMonth() + 1 %>/<%- campaign.first_closure.getDate()%>/ <%-
-                                        campaign.first_closure.getFullYear() %>
-                                        <%- campaign.first_closure.getHours()%>:<%- campaign.first_closure.getMinutes()
-                                                %> to <%- campaign.final_closure.getMonth() + 1 %>/<%-
-                                                        campaign.final_closure.getDate()%>/ <%-
-                                                            campaign.final_closure.getFullYear() %>
-                                                            <%- campaign.final_closure.getHours()%>:<%-
-                                                                    campaign.final_closure.getMinutes() %>
-                        </p>
-                    </div>
-                    <div class="viewRight">
-                        <% if(campaign.first_closure> current){%>
-                            <td style="color: green">Open</td>
-                            <% }else if(campaign.first_closure <=current && campaign.final_closure>
-                                current){%>
-                                <td style="color: orange">First Closure Closed</td>
-                                <%}else{%>
-                                    <td style="color: red">Closed</td>
-                                    <% } %>
+      <div class="direction: rtl;">
+        <a href="/admin/campaign/<%- campaign._id %>" class="edit" onclick=""
+          ><i class="bi bi-pencil-square"></i
+        ></a>
+        <a
+          href="/admin/delete_campaign/<%- campaign._id %>"
+          class="delete"
+          onclick=""
+          ><i class="bi bi-trash"></i
+        ></a>
+      </div>
 
-                                        <div class="direction: rtl;">
-                                            <a href="/admin/campaign/<%- campaign._id %>" class="edit" onclick=""><i
-                                                    class="bi bi-pencil-square"></i></a>
-                                            <a href="/admin/delete_campaign/<%- campaign._id %>" class="delete"
-                                                onclick=""><i class="bi bi-trash"></i></a>
-                                        </div>
-
-                                        <% }) %>
-                                            <% } %>
-                                                <%- include('../_layout/footer') %>
-                    </div>
-                </li>
+      <% }) %> <% } %> <%- include('../_layout/footer') %>
     </div>
+  </li>
+</div>
