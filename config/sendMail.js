@@ -1,7 +1,7 @@
 require("dotenv").config();
 const nodeMailer = require("nodemailer");
 
-const sendMail = (to, text) => {
+const sendMail = (qac, text) => {
   var transport = nodeMailer.createTransport({
     host: "smtp.mailtrap.io",
     port: 2525,
@@ -12,8 +12,8 @@ const sendMail = (to, text) => {
   });
 
   const options = {
-    from: "reply@email.com",
-    to: to,
+    from: "staff@email.com",
+    to: qac,
     subject: "Automatic messages",
     text: text,
   };
