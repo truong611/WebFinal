@@ -56,9 +56,7 @@ mongoose.connect(
   }
 );
 
-//passport config
 require("./config/passport")(passport);
-//passport middleware
 
 app.use(passport.initialize());
 app.use(passport.session());
