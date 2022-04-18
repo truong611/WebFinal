@@ -149,10 +149,10 @@ const staffController = {
         os: title,
       });
 
-      const qamUser = await User.find({ role: "qam" });
-      if (qamUser.length != 0) {
+      const qacUser = await User.find({ role: "qac" });
+      if (qacUser.length != 0) {
         var maillist = [];
-        qamUser.forEach((element) => {
+        qacUser.forEach((element) => {
           maillist.push(element.email);
         });
         mailer.sendMail(
